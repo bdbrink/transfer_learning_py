@@ -19,5 +19,6 @@ mask_test_8 = np.isin(y_test, split_classes, invert=True).flatten()
 # Print the first 20 elements of the training set mask
 print(mask_train_8[:20])
 
+# Create subsets of the training and test data by filtering out specific classes
 x_train_8, y_train_8 = x_train[mask_train_8], y_train[mask_train_8]
 x_test_8, y_test_8 = x_test[mask_test_8], y_test[mask_test_8]
