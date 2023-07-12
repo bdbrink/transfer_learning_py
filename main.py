@@ -28,5 +28,8 @@ mask_test_2 = np.isin(y_test, split_classes).flatten()
 x_train_2, y_train_2 = x_train[mask_train_2], y_train[mask_train_2]
 x_test_2, y_test_2 = x_test[mask_test_2], y_test[mask_test_2]
 
-print(len(x_train_2))
-print(len(x_train_8))
+print(len(x_train_2))  # Print the number of instances in the x_train_2 dataset
+print(len(x_train_8))  # Print the number of instances in the x_train_8 dataset
+
+y_train_2 = np.isin(y_train_2, split_classes[0]).astype(int)  # Create a binary mask where y_train_2 elements belonging to split_classes[0] are set to 1, and others are set to 0
+y_train_2 = np.isin(y_test_2, split_classes[0]).astype(int)  # Create a binary mask where y_test_2 elements belonging to split_classes[0] are set to 1, and others are set to 0
