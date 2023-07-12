@@ -12,13 +12,21 @@ split_classes = [8, 9]
 
 # Create boolean masks to filter out specific classes from the training set
 mask_train_8 = np.isin(y_train, split_classes, invert=True).flatten()
-
 # Create boolean masks to filter out specific classes from the test set
 mask_test_8 = np.isin(y_test, split_classes, invert=True).flatten()
-
-# Print the first 20 elements of the training set mask
-print(mask_train_8[:20])
 
 # Create subsets of the training and test data by filtering out specific classes
 x_train_8, y_train_8 = x_train[mask_train_8], y_train[mask_train_8]
 x_test_8, y_test_8 = x_test[mask_test_8], y_test[mask_test_8]
+
+# Create boolean masks to filter out specific classes from the training set
+mask_train_2 = np.isin(y_train, split_classes).flatten()
+# Create boolean masks to filter out specific classes from the test set
+mask_test_2 = np.isin(y_test, split_classes).flatten()
+
+# Create subsets of the training and test data by filtering out specific classes
+x_train_2, y_train_2 = x_train[mask_train_2], y_train[mask_train_2]
+x_test_2, y_test_2 = x_test[mask_test_2], y_test[mask_test_2]
+
+print(len(x_train_2))
+print(len(x_train_8))
