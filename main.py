@@ -33,3 +33,11 @@ print(len(x_train_8))  # Print the number of instances in the x_train_8 dataset
 
 y_train_2 = np.isin(y_train_2, split_classes[0]).astype(int)  # Create a binary mask where y_train_2 elements belonging to split_classes[0] are set to 1, and others are set to 0
 y_train_2 = np.isin(y_test_2, split_classes[0]).astype(int)  # Create a binary mask where y_test_2 elements belonging to split_classes[0] are set to 1, and others are set to 0
+
+model = Sequential(
+    [
+        Conv2D(32, (3, 3), activation="relu", padding="same", input_shape(32,32,3)),
+        MaxPooling2D((2,2)),
+        Dropout(0,25)
+    ]
+)
