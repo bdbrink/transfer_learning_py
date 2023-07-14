@@ -36,8 +36,8 @@ y_train_2 = np.isin(y_test_2, split_classes[0]).astype(int)  # Create a binary m
 
 model = Sequential(
     [
-        Conv2D(32, (3, 3), activation="relu", padding="same", input_shape(32,32,3)),
-        MaxPooling2D((2,2)),
-        Dropout(0,25)
+        Conv2D(32, (3, 3), activation="relu", padding="same", input_shape=(32, 32, 3)),
+        MaxPooling2D((2, 2)),
+        Dropout(0.25)
     ]
 )
